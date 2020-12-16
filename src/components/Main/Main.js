@@ -3,7 +3,9 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "../Header/Header";
-import Map from "../Map/Map";
+
+import Map from "../../pages/Map/Map";
+import Profile from "../../pages/Profile/Profile";
 
 const MainBlock = styled.div`
   height: 100%;
@@ -21,7 +23,8 @@ const Main = () => {
     <MainBlock>
       <Header />
       <MainBlockContent>
-        <Map />
+        {/* <Map /> */}
+        <Profile />
       </MainBlockContent>
     </MainBlock>
   );
