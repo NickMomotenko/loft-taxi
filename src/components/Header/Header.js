@@ -16,11 +16,11 @@ const HeaderWrapp = styled.header`
   justify-content: space-between;
 `;
 
-const Header = () => {
+const Header = ({ setPage }) => {
   return (
     <HeaderWrapp>
       <Logo url={logoIcon} />
-      <Menu />
+      <Menu onClick={setPage} />
     </HeaderWrapp>
   );
 };

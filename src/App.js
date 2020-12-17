@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
-import Login from "./components/Login/Login";
+import Login from "./pages/Login/Login";
 import Main from "./components/Main/Main";
 
 const AppWrapper = styled.div`
@@ -11,10 +11,11 @@ const AppWrapper = styled.div`
 `;
 
 const App = () => {
+  const [page, setPage] = useState("map");
   return (
     <AppWrapper>
       {/* <Login /> */}
-      <Main />
+      <Main page={page} setPage={setPage} />
     </AppWrapper>
   );
 };

@@ -16,11 +16,14 @@ const InputWrapp = styled.input`
   }
 `;
 
-const Input = ({ placeholder, type }) => {
+const Input = ({ value, name, placeholder, type, onChange }) => {
   return (
     <InputWrapp
       type={type ? type : "text"}
       placeholder={placeholder}
+      value={value ? value : ""}
+      name={name}
+      onChange={(e) => onChange(e.target.name, e.target.value)}
     ></InputWrapp>
   );
 };

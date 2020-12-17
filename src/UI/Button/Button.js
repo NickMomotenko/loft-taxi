@@ -12,8 +12,8 @@ const ButtonWrapp = styled.button`
   width: 100%;
 `;
 
-const Button = ({ title }) => {
-  return <ButtonWrapp>{title}</ButtonWrapp>;
+const Button = ({ title, type ,onClick }) => {
+  return <ButtonWrapp type={type ? type : "button"} onClick={onClick}>{title}</ButtonWrapp>;
 };
 
 export default Button;

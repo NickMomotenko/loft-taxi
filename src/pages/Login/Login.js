@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 import mapBg from "../../assets/map.png";
 
-import Logo from "../Logo/Logo";
+import Logo from "../../components/Logo/Logo";
 
-import FormBlock from "../Form/FormBlock";
-import FormLabel from "../Form/FormLabel";
-import FormSubtitle from "../Form/FormSubtitle";
-import FormBottomBlock from "../Form/FormBottomBlock";
+import FormBlock from "../../components/Form/FormBlock";
+import FormLabel from "../../components/Form/FormLabel";
+import FormSubtitle from "../../components/Form/FormSubtitle";
+import FormBottomBlock from "../../components/Form/FormBottomBlock";
 
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";

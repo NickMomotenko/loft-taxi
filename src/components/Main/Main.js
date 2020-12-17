@@ -16,15 +16,16 @@ const MainBlock = styled.div`
 
 const MainBlockContent = styled.div`
   flex: 1;
+  position: relative;
 `;
 
-const Main = () => {
+const Main = ({ page, setPage }) => {
   return (
     <MainBlock>
-      <Header />
+      <Header setPage={setPage} />
       <MainBlockContent>
-        {/* <Map /> */}
-        <Profile />
+        {page == "map" && <Map />}
+        {page == "profile" && <Profile />}
       </MainBlockContent>
     </MainBlock>
   );

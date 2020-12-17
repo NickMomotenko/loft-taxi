@@ -11,10 +11,10 @@ const MenuListContent = styled.ul`
   align-items: center;
 `;
 
-const MenuList = () => {
+const MenuList = ({ onClick }) => {
   const list = [
-    { id: 1, title: "Карта", func: () => {} },
-    { id: 2, title: "Профиль", func: () => {} },
+    { id: 1, title: "Карта", path: "map" },
+    { id: 2, title: "Профиль", path: "profile" },
     { id: 3, title: "Выйти", func: () => {} },
   ];
 
@@ -33,7 +33,10 @@ const MenuList = () => {
             key={item.id}
             item={item}
             active={active}
-            onClick={(e) => changeActiveItem(e, item)}
+            onClick={(e) => {
+              changeActiveItem(e, item);
+              onClick(item.path);
+            }}
           />
         ))}
       </MenuListContent>

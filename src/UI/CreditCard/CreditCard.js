@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 
+import logoIcon from "../../assets/credit-card/logo.png";
+import simIcon from "../../assets/credit-card/sim.png";
+import masterCardIcon from "../../assets/credit-card/master-card.png";
+
 const CreditCardWrapp = styled.div`
   background: #ffffff;
   box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
@@ -21,7 +25,11 @@ const CreditCardRow = styled.div`
   justify-content: space-between;
 `;
 
-const CreditCardIcon = styled.im``;
+const CreditCardIcon = styled.img.attrs(({ url }) => ({
+  src: url,
+}))`
+  display: inline-block;
+`;
 
 const CreditCardDate = styled.div`
   font-size: 12px;
@@ -32,25 +40,22 @@ const CreditCardNumber = styled(CreditCardDate)`
   font-size: 21px;
 `;
 
-const CreditCard = () => {
-  const [card, setCard] = useState({
-    date: {
-      year: 2020,
-      month: 5,
-    },
-    number: 5545230034324521,
-  });
-
+const CreditCard = ({ date, number }) => {
   return (
     <CreditCardWrapp>
       <CreditCardRow>
-        <CreditCardIcon url="" />
-        <CreditCardDate>{`${card.date.month}/${card.date.year}`}</CreditCardDate>
+        <CreditCardIcon url={logoIcon} />
+        <CreditCardDate>{`${
+          date.month < 10 ? `0${date.month}` : date.month
+        }/${date.year}`}</CreditCardDate>
       </CreditCardRow>
       <CreditCardRow>
-        <CreditCardNumber>{card.number}</CreditCardNumber>
+        <CreditCardNumber>{number}</CreditCardNumber>
       </CreditCardRow>
-      <CreditCardRow></CreditCardRow>
+      <CreditCardRow>
+        <CreditCardIcon url={simIcon} />
+        <CreditCardIcon url={masterCardIcon} />
+      </CreditCardRow>
     </CreditCardWrapp>
   );
 };

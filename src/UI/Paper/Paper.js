@@ -8,8 +8,8 @@ const PaperWrapp = styled.div`
   border-radius: 10px;
   padding: 59px 44px 69px;
   display: inline-block;
-  max-width: 822px;
-  width: 100%;
+  /* max-width: 822px;
+  width: 100%; */
 `;
 
 const Paper = ({ children }) => {
